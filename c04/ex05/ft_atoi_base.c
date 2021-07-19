@@ -12,96 +12,80 @@
 
 #include <unistd.h>
 
-int	ft_check_char(char *base)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (base[i] != '\0')
+	while (str[i])
+		i++;
+	return (i);
+}
+
+int	check_base(char *base)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 1;
+	while (base[i])
 	{
-		if (base[i] == '+' || base[i] == '-' || base[i] == base[i + 1]
-			|| base[i] == ' ' || base[i] == '\n' || base[i] == '\t'
-			|| base[i] == '\v' || base[i] == '\f' || base[i] == '\r')
+		if (ft_strlen(base) < 2)
 			return (0);
+		if (base[i] == '-' || base[i] == '+'
+			|| (base[i] < 32 || base[i] > 126) || base[i] == ' '
+			|| base[i] == '\n' || base[i] == '\r' || base[i] == '\v'
+			|| base[i] == '\t' || base[i] == '\f')
+			return (0);
+		j = i + 1;
+		while (base[j])
+		{
+			if (base[i] == base[j++])
+				return (0);
+		}
 		i++;
 	}
-	if (i <= 1)
-		return (0);
 	return (1);
 }
 
-int	ft_mult(char d, char *base, int mult, int nbr)
+int	is_inside(char c, char *base)
 {
-	int	c;
+	int	i;
 
-	c = 0;
-	while (base[c] != '\0')
+	i = 0;
+	while (base[i])
 	{
-		if (d == base[c])
-			return (nbr + (mult * c));
-		c++;
+		if (c == base[i])
+			return (i);
+		i++;
 	}
-	return (nbr);
-}
-
-int	ft_check_char_double(char n, char *base)
-{
-	int	c;
-
-	c = 0;
-	if (n == '\n' || n == '\t' || n == '\v' || n == '\f' || n == '\r'
-		|| n == ' ' || n == '+' || n == '-')
-		return (-1);
-	while (base[c] != '\0')
-	{
-		if (base[c] == n)
-			return (1);
-		c++;
-	}
-	return (0);
-}
-
-int	ft_atoi_calc(char *str, char *base, int size, int start)
-{
-	int	c;
-	int	s;
-	int	res;
-	int	mult;
-
-	c = start - 1;
-	s = 1;
-	res = 0;
-	mult = 1;
-	while (c >= 0)
-	{
-		if (str[c] == '-')
-			s *= -1;
-		if (ft_check_char_double(str[c], base))
-		{
-			res = ft_mult(str[c], base, mult, res);
-			mult *= size;
-		}
-		c--;
-	}
-	return (res * s);
+	return (-1);
 }
 
 int	ft_atoi_base(char *str, char *base)
 {
-	int	size;
-	int	c;
+	int			i;
+	int			neg;
+	long int	res;
 
-	size = 0;
-	c = 0;
-	if (ft_check_char(base) == 0)
+	i = 0;
+	res = 0;
+	neg = 1;
+	if (!check_base(base))
 		return (0);
-	while (base[size] != '\0')
-		size++;
-	while (str[c] == '\n' || str[c] == '\t' || str[c] == '\v'
-		|| str[c] == '\f' || str[c] == '\r' || str[c] == ' '
-		|| str[c] == '-' || str[c] == '+')
-		c++;
-	while (str[c] >= '0' && str[c] <= '9')
-		c++;
-	return (ft_atoi_calc(str, base, size, c));
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	while (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			neg = -neg;
+		i++;
+	}
+	while (is_inside(str[i], base) != -1)
+	{
+		res = (res * ft_strlen(base)) + (is_inside(str[i], base));
+		i++;
+	}
+	return (res * neg);
 }
