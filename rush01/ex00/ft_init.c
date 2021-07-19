@@ -22,11 +22,11 @@ int	ft_init_line(int **tab, int size, char *argv)
 	a = 0;
 	b = 1;
 	n = 1;
-	while (b < size + 1)
+	while (b <= size)
 		tab[a][b++] = ft_getarg(argv, n++);
 	b = 1;
 	a = (size + 2) - 1;
-	while (b < size + 1)
+	while (b <= size)
 		tab[a][b++] = ft_getarg(argv, n++);
 	return (1);
 }
@@ -40,11 +40,11 @@ int	ft_init_column(int **tab, int size, char *argv)
 	a = 1;
 	b = 0;
 	n = size * 2 + 1;
-	while (a < size + 1)
+	while (a <= size)
 		tab[a++][b] = ft_getarg(argv, n++);
 	b = (size + 2) - 1;
 	a = 1;
-	while (a < size + 1)
+	while (a <= size)
 		tab[a++][b] = ft_getarg(argv, n++);
 	return (1);
 }
@@ -54,13 +54,14 @@ int	ft_init_fill(int **tab, int size)
 	int	a;
 	int	b;
 
-	a = 0;
+	a = 1;
 	b = 1;
-	while (a++ < size)
+	while (a < size)
 	{
-		while (b < size + 1)
+		while (b <= size)
 			tab[a][b++] = 0;
 		b = 1;
+		a++;
 	}
 	return (1);
 }

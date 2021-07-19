@@ -26,12 +26,8 @@ int	ft_check_line(int	**tab, int size, int x, int y)
 			n++;
 		x++;
 	}
-	x = 1;
-	y++;
 	if (n <= 1)
-	{
 		return (1);
-	}
 	return (0);
 }
 
@@ -50,9 +46,7 @@ int	ft_check_column(int **tab, int size, int x, int y)
 		y++;
 	}
 	if (n <= 1)
-	{
 		return (1);
-	}
 	return (0);
 }
 
@@ -60,8 +54,6 @@ int	ft_check(int **tab, int size, int x, int y)
 {
 	if (ft_check_line(tab, size, x, y) == 1
 		&& ft_check_column(tab, size, x, y) == 1)
-	{
 		return (1);
-	}
 	return (0);
 }

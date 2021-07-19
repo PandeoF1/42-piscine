@@ -15,8 +15,7 @@
 
 int	error(void)
 {
-	ft_putstr("Error");
-	ft_putchar('\n');
+	ft_putstr("Error\n");
 	return (0);
 }
 
