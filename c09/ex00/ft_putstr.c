@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 
-void	ft_putchar(char *str)
+void	ft_putstr(char *str)
 {
 	int	n;
 
