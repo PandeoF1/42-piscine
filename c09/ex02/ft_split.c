@@ -51,7 +51,7 @@ int	ft_wordcount(char *str, char *charset)
 	return (j);
 }
 
-char	*ft_strcpy(char *src, int j)
+char	*ft_strdup(char *src, int j)
 {
 	char	*dst;
 	int		i;
@@ -86,7 +86,7 @@ char	**ft_split(char *str, char *charset)
 		while (ft_is_charset(*str, charset))
 			str++;
 		j = ft_wordlen(str, charset);
-		dest[i] = ft_strcpy(str, j);
+		dest[i] = ft_strdup(str, j);
 		str += j;
 		i++;
 	}
