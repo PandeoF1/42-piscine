@@ -12,7 +12,7 @@ Mon repo de ma piscine.
 		- C.02 (85%)
 		- C.03 (75%)
 		- C.04 (85%)
-		- C.05 (90% (Erreur d'evaluation))
+		- C.05 (90% (Erreur d'evaluation - 80%))
 		- C.06 (100%)
 		- C.07 (-42%)
 		- C.08 (100%)
