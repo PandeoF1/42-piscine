@@ -5,19 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/19 14:38:39 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/19 14:38:53 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/19 14:39:04 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/19 14:39:05 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_foreach(int *tab, int length, void(*f)(int))
+int	*ft_map(int *tab, int length, int(*f)(int))
 {
-	int	n;
+	int	*tab;
 
-	n = 0;
-	while (n <= length)
-		f(tab[n++]);
-	return ;
+	return (tab);
 }
