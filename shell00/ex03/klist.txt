@@ -1,0 +1,6 @@
+Credentials cache: API:7124F8FD-21CE-4E2E-A24C-A239AD6E173F
+        Principal: tnard@42LYON.FR
+
+  Issued                Expires               Principal
+Jul  5 09:56:40 2021  Jul  6 09:56:40 2021  krbtgt/42LYON.FR@42LYON.FR
+Jul  5 09:56:43 2021  Jul  6 09:56:40 2021  HTTP/san-ssd.42lyon.fr@42LYON.FR
