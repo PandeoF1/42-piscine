@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/19 15:11:34 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/19 15:11:34 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/19 16:29:10 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/19 16:29:11 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_any(char **tab, int(*f)(char *))
+int	ft_count_if(char **tab, int length, int(*f)(char*))
 {
-	int	i;
+	int	n;
+	int	count;
 
-	i = 0;
-	while (tab[i])
-		if (f(tab[i++]))
-			return (1);
-	return (0);
+	count = 0;
+	n = 0;
+	while (tab[n])
+		if (f(tab[n++]) != 0)
+			count++;
+	return (1);
 }
