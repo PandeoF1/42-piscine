@@ -10,11 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
 int	*ft_map(int *tab, int length, int(*f)(int))
 {
 	int	*tab;
+	int	n;
 
+	n = 0;
+	tab = malloc(sizeof(int) * length);
+	if (!tab || length <= 0)
+		return (NULL);
+	while (n <= length)
+		tab[length] = f(tab[n++]);
 	return (tab);
 }
