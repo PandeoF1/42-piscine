@@ -40,8 +40,3 @@ void	ft_putstr_non_printable(char *str)
 		i++;
 	}
 }
-
-int	main()
-{
-	ft_putstr_non_printable("Yolo\n\t\v\f\c");
-}

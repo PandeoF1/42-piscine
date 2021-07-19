@@ -11,63 +11,85 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
-int	ft_strlen(char *str)
+int	ft_is_charset(char str, char *charset)
 {
-	int	n;
-
-	n = 0;
-	while (str[n])
-		n++;
-	return (n);
+	while (*charset)
+	{
+		if (str == *charset)
+			return (1);
+		charset++;
+	}
+	return (0);
 }
 
-int	ft_count_str(char *str, char *to_find)
+int	ft_wordlen(char *str, char *charset)
 {
-	int	n;
 	int	i;
-	int	a;
-	int	count;
 
-	count = 0;
-	n = 0;
 	i = 0;
-	a = 0;
-	if (to_find[i] == '\0')
-		return (str);
-	while (to_find[i])
+	while (str[i] && ft_is_charset(str[i], charset) == 0)
 		i++;
-	while (str[n])
+	return (i);
+}
+
+int	ft_wordcount(char *str, char *charset)
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	while (*str)
 	{
-		a = 0;
-		while (str[n] && str[n++] == to_find[a++])
-			if (to_find[a] == '\0')
-				count++;
+		while (*str && ft_is_charset(*str, charset) == 1)
+			str++;
+		i = ft_wordlen(str, charset);
+		str += i;
+		if (i)
+			j++;
 	}
-	return (count);
+	return (j);
+}
+
+char	*ft_strcpy(char *src, int j)
+{
+	char	*dst;
+	int		i;
+
+	i = 0;
+	dst = malloc((j + 1) * sizeof(char));
+	if (!dst)
+		return (0);
+	while (i < j && src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
 }
 
 char	**ft_split(char *str, char *charset)
 {
-	char	**tab;
-	int count;
-	int n;
-	int len;
+	char		**dest;
+	int			size;
+	int			i;
+	int			j;
 
-	len = 0;
-	n = 0;
-	count = ft_count_str(str, charset);
-	printf("%d", count); //todelete
-	tab = malloc(sizeof(char **) * count);
-	while (n <= count)
+	i = 0;
+	size = ft_wordcount(str, charset);
+	dest = malloc((size + 1) * sizeof(char *));
+	if (!dest)
+		return (0);
+	while (i < size)
 	{
-		tab[n] = malloc(sizeof(char *) * 50);
-		while ()
-
-		n++;
+		while (ft_is_charset(*str, charset))
+			str++;
+		j = ft_wordlen(str, charset);
+		dest[i] = ft_strcpy(str, j);
+		str += j;
+		i++;
 	}
-
-	return (tab);
-
+	dest[size] = 0;
+	return (dest);
 }
