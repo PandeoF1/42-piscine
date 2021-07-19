@@ -6,13 +6,12 @@
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 15:38:45 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/17 15:38:46 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/18 18:34:56 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 int	ft_init_line(int **tab, int size, char *argv)
 {

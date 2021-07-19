@@ -6,12 +6,11 @@
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 10:14:59 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/17 10:15:00 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/18 18:34:38 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
-#include <stdio.h>
 
 int	ft_check_count(int count, int size, int number)
 {

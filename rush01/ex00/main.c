@@ -6,19 +6,26 @@
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 09:31:21 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/17 09:31:22 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/18 18:49:16 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 int	error(void)
 {
 	ft_putstr("Error");
 	ft_putchar('\n');
 	return (0);
+}
+
+void	ft_destroy_tab(int **tab, int size)
+{
+	while (size--)
+		free(tab[size]);
+	free(tab);
+	return ;
 }
 
 int	main(int argc, char *argv[])
@@ -40,7 +47,7 @@ int	main(int argc, char *argv[])
 			ft_show(tab, size);
 		else
 			return (error());
-		free(tab);
+		ft_destroy_tab(tab, size);
 		return (0);
 	}
 	return (error());

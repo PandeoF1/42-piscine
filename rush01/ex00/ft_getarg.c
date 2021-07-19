@@ -6,12 +6,11 @@
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 10:15:02 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/17 10:15:03 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/18 18:34:50 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
-#include <stdio.h>
 
 int	ft_getarg(char *str, int nb)
 {

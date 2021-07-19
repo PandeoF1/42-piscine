@@ -6,13 +6,11 @@
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 09:13:48 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/18 09:13:51 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/18 18:34:20 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
-#include <stdio.h>
-#include <unistd.h>
 
 int	ft_check_line(int	**tab, int size, int x, int y)
 {
