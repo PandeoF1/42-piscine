@@ -56,8 +56,6 @@ struct	s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		return (NULL);
 	while (i < ac)
 	{
-		tab[i].copy = malloc(sizeof(char *) * ft_strlen(av[i]) + 1);
-		tab[i].str = malloc(sizeof(char *) * ft_strlen(av[i]) + 1);
 		if (tab[i].str == NULL || tab[i].copy == NULL)
 			return (NULL);
 		tab[i].size = ft_strlen(av[i]);
