@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*   ft_sort_string_tab.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/12 09:47:11 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/12 12:38:03 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/20 10:27:40 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/20 10:27:40 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,17 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[n] - s2[n]);
 }
 
-void	ft_sort_tab(char *tab[], int size)
+void	ft_sort_tab(char **tab)
 {
 	int		i;
 	int		j;
 	char	*temp;
+	int		size;
 
+	size = 0;
 	i = 1;
+	while (tab[size])
+		size++;
 	while (i < size)
 	{
 		j = i + 1;
@@ -59,15 +63,4 @@ void	ft_sort_tab(char *tab[], int size)
 		i++;
 	}
 	return ;
-}
-
-int	main(int argc, char *argv[])
-{
-	int	n;
-
-	n = 1;
-	ft_sort_tab(argv, argc);
-	while (n <= argc - 1)
-		ft_putstr(argv[n++]);
-	return (0);
 }
