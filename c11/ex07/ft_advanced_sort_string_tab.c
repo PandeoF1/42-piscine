@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_string_tab.c                               :+:      :+:    :+:   */
+/*   ft_advanced_sort_string_tab.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/20 10:27:40 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/20 10:27:40 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/20 11:17:32 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/20 11:17:33 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	n;
-
-	n = 0;
-	while (s1[n] && s1[n] == s2[n])
-		n++;
-	return (s1[n] - s2[n]);
-}
-
-void	ft_sort_string_tab(char **tab)
+void	ft_advanced_sort_string_tab(char **tab, int(*cmp)(char *, char *))
 {
 	int		i;
 	int		j;
@@ -36,7 +26,7 @@ void	ft_sort_string_tab(char **tab)
 		j = i + 1;
 		while (j < size)
 		{
-			if (ft_strcmp(tab[j], tab[i]) < 0)
+			if (cmp(tab[j], tab[i]) < 0)
 			{
 				temp = tab[i];
 				tab[i] = tab[j];
