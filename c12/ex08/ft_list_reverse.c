@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_back.c                                :+:      :+:    :+:   */
+/*   ft_list_reverse.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/20 14:03:39 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/20 14:03:40 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/21 12:54:31 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/21 12:54:31 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	ft_list_push_back(t_list **begin_list, void *data)
+void	ft_list_reverse(t_list **begin_list)
 {
-	t_list	*list;
+	t_list	*a;
+	t_list	*b;
 
-	list = *begin_list;
-	if (!list)
+	a = 0;
+	while (*begin_list)
 	{
-		list = ft_create_elem(data);
-		return ;
+		b = (*begin_list)->next;
+		(*begin_list)->next = a;
+		a = *begin_list;
+		*begin_list = b;
 	}
-	while (list->next)
-		list = list->next;
-	list->next = ft_create_elem(data);
+	*begin_list = a;
 }

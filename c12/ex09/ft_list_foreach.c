@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_back.c                                :+:      :+:    :+:   */
+/*   ft_list_foreach.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/20 14:03:39 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/20 14:03:40 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/21 13:05:37 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/21 13:05:38 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	ft_list_push_back(t_list **begin_list, void *data)
+void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
 {
-	t_list	*list;
-
-	list = *begin_list;
-	if (!list)
+	while (begin_list)
 	{
-		list = ft_create_elem(data);
-		return ;
+		(*f)(begin_list->data);
+		begin_list = begin_list->next;
 	}
-	while (list->next)
-		list = list->next;
-	list->next = ft_create_elem(data);
+	return ;
 }
