@@ -1,8 +1,5 @@
 # [Piscine - 42 Lyon](https://www.42lyon.fr/)
-## Juillet (05 -> 30) - 2021
-
-Mon repo de ma piscine.
-
+## June (05 -> 30) - 2021
 
 ## Note :
 		- Shell.00 (100%)
@@ -21,6 +18,7 @@ Mon repo de ma piscine.
 		- C.11 (10%)
 		- C.12 (x%)
 		- C.13 (x%)
+		- BSQ (x%)
 		- Exam.00 (100%)
 		- Exam.01 (80%)
 		- Rush.00 (125%)
