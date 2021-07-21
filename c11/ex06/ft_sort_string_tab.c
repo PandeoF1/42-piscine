@@ -12,12 +12,12 @@
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	n;
+	int	i;
 
-	n = 0;
-	while (s1[n] && s1[n] == s2[n])
-		n++;
-	return (s1[n] - s2[n]);
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] & s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }
 
 void	ft_sort_string_tab(char **tab)
@@ -25,26 +25,22 @@ void	ft_sort_string_tab(char **tab)
 	int		i;
 	int		j;
 	char	*temp;
-	int		size;
 
-	size = 0;
-	i = 1;
-	while (tab[size])
-		size++;
-	while (i < size)
+	i = 0;
+	j = 0;
+	while (tab[i])
 	{
-		j = i + 1;
-		while (j < size)
+		j = 1;
+		while (tab[j])
 		{
-			if (ft_strcmp(tab[j], tab[i]) < 0)
+			if (ft_strcmp(tab[j - 1], tab[i]) > 0)
 			{
-				temp = tab[i];
-				tab[i] = tab[j];
-				tab[j] = temp;
+				temp = tab[j - 1];
+				tab[j - 1] = tab[i];
+				tab[i] = temp;
 			}
 			j++;
 		}
 		i++;
 	}
-	return ;
 }

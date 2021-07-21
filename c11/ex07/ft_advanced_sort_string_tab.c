@@ -10,23 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_advanced_sort_string_tab(char **tab, int(*cmp)(char *, char *))
+void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 {
 	int		i;
 	int		j;
 	char	*temp;
-	int		size;
 
-	size = 0;
-	i = 1;
-	while (tab[size])
-		size++;
-	while (i < size)
+	i = 0;
+	while (tab[i])
 	{
-		j = i + 1;
-		while (j < size)
+		j = 0;
+		while (tab[j])
 		{
-			if (cmp(tab[j], tab[i]) < 0)
+			if (cmp(tab[i], tab[j]) < 0)
 			{
 				temp = tab[i];
 				tab[i] = tab[j];
@@ -36,5 +32,4 @@ void	ft_advanced_sort_string_tab(char **tab, int(*cmp)(char *, char *))
 		}
 		i++;
 	}
-	return ;
 }
