@@ -10,56 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putnbr(int nb);
-void	ft_putstr(char *str);
-void	ft_putchar(char c);
-
-int	ft_atoi(char *str)
-{
-	int	n;
-	int	revert;
-
-	n = 0;
-	revert = 0;
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		str++;
-	revert = 0;
-	while (*str == '-' || *str == '+')
-		if (*str++ == '-')
-			revert = 1 - revert;
-	n = 0;
-	while (*str >= '0' && *str <= '9')
-		n = n * 10 + *str++ - '0';
-	if (revert)
-		n *= -1;
-	return (n);
-}
-
-void	ft_calc(int a, char op, int b)
-{
-	int	calc;
-
-	calc = 0;
-	if (op == '+')
-		calc = a + b;
-	if (op == '-')
-		calc = a - b;
-	if (op == '*')
-		calc = a * b;
-	if (op == '/')
-	{
-		if (b == 0)
-			return (ft_putstr("Stop : division by zero\n"));
-		calc = a / b;
-	}
-	if (op == '%')
-	{
-		if (b == 0)
-			return (ft_putstr("Stop : modulo by zero\n"));
-		calc = a % b;
-	}
-	ft_putnbr(calc);
-}
+#include "ft_do_op.h"
 
 int	main(int argc, char *argv[])
 {

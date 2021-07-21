@@ -1,17 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   ft_put.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/20 09:12:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/20 09:12:33 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/20 10:26:10 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/20 10:26:11 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_sort(int *tab, int length, int(*f)(int, int))
+#include <unistd.h>
+#include "ft_do_op.h"
+
+void	ft_putstr(char *str)
 {
-	
-	return (1);
+	int	n;
+
+	n = 0;
+	while (str[n])
+		write (1, &str[n++], 1);
+	return ;
 }

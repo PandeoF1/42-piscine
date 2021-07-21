@@ -1,17 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   ft_list_push_front.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/20 09:12:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/20 09:12:33 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/20 13:12:02 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/20 13:12:02 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_sort(int *tab, int length, int(*f)(int, int))
+#include "ft_list.h"
+
+void	ft_list_push_front(t_list **begin_list, void *data)
 {
-	
-	return (1);
+	t_list	*e;
+
+	e = ft_create_elem(data);
+	if (*begin_list)
+		e->next = *begin_list;
+	*begin_list = e;
 }

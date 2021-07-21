@@ -6,7 +6,7 @@ Mon repo de ma piscine.
 
 ## Note :
 		- Shell.00 (100%)
-		- Shell.01 (85%)
+		- Shell.01 (100%)
 		- C.00 (100%)
 		- C.01 (100%)
 		- C.02 (85%)

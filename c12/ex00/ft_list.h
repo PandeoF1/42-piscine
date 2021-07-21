@@ -1,17 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/20 09:12:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/20 09:12:33 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/20 12:00:55 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/20 12:00:56 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_sort(int *tab, int length, int(*f)(int, int))
+#ifndef FT_LIST_H
+# define FT_LIST_H
+
+typedef struct s_list
 {
-	
-	return (1);
-}
+	struct s_list	*next;
+	void			*data;
+}					t_list;
+
+t_list				*ft_create_elem(void *data);
+
+#endif

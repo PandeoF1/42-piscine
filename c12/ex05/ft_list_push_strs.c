@@ -1,17 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   ft_list_push_strs.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/20 09:12:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/20 09:12:33 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/20 14:33:19 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/20 14:33:20 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_sort(int *tab, int length, int(*f)(int, int))
+#include "ft_list.h"
+
+t_list	*ft_list_push_strs(int size, char **strs)
 {
-	
-	return (1);
+	t_list	*tmp;
+	t_list	*begin;
+	int		n;
+
+	n = 0;
+	while (n < size)
+	{
+		tmp = ft_create_elem(strs[n]);
+		tmp->next = begin;
+		begin = tmp;
+		n++;
+	}
+	return (begin);
 }

@@ -1,17 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   ft_op.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/20 09:12:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/20 09:12:33 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/20 09:34:40 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/20 10:26:05 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_sort(int *tab, int length, int(*f)(int, int))
+#include "ft_do_op.h"
+
+void	ft_calc(int a, char op, int b)
 {
-	
-	return (1);
+	int	calc;
+
+	calc = 0;
+	if (op == '+')
+		calc = a + b;
+	if (op == '-')
+		calc = a - b;
+	if (op == '*')
+		calc = a * b;
+	if (op == '/')
+	{
+		if (b == 0)
+			return (ft_putstr("Stop : division by zero\n"));
+		calc = a / b;
+	}
+	if (op == '%')
+	{
+		if (b == 0)
+			return (ft_putstr("Stop : modulo by zero\n"));
+		calc = a % b;
+	}
+	ft_putnbr(calc);
 }
