@@ -3,32 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: tnard <tnard@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 10:24:37 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/21 10:24:37 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/21 16:41:06 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_do_op.h"
+#include <unistd.h>
 
 int	ft_atoi(char *str)
 {
-	int	n;
-	int	revert;
+	int	i;
+	int	p;
+	int	c;
 
-	n = 0;
-	revert = 0;
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		str++;
-	revert = 0;
-	while (*str == '-' || *str == '+')
-		if (*str++ == '-')
-			revert = 1 - revert;
-	n = 0;
-	while (*str >= '0' && *str <= '9')
-		n = n * 10 + *str++ - '0';
-	if (revert)
-		n *= -1;
-	return (n);
+	i = 0;
+	p = 1;
+	c = 0;
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
+		i++;
+	while (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			p = p * -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		c = c * 10 + (str[i] - 48);
+		i++;
+	}
+	return (c * p);
 }

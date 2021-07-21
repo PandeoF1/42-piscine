@@ -3,33 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_advanced_sort_string_tab.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: tnard <tnard@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 11:17:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/20 11:17:33 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/21 17:23:59 by tnard            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void	ft_strswap(char **a, char **b)
+{
+	char	*c;
+
+	c = *a;
+	*a = *b;
+	*b = c;
+}
+
 void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 {
-	int		i;
-	int		j;
-	char	*temp;
+	int	size;
+	int	i;
 
-	i = 0;
-	while (tab[i])
+	size = 0;
+	while (tab[size])
+		size++;
+	while (size-- > 0)
 	{
-		j = 0;
-		while (tab[j])
-		{
-			if (cmp(tab[i], tab[j]) < 0)
-			{
-				temp = tab[i];
-				tab[i] = tab[j];
-				tab[j] = temp;
-			}
-			j++;
-		}
-		i++;
+		i = 0;
+		while (i++ < size)
+			if (cmp(tab[i - 1], tab[i]) > 0)
+				ft_strswap(&tab[i - 1], &tab[i]);
 	}
 }
