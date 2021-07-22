@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/19 14:39:04 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/22 16:49:29 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/22 13:47:52 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/22 13:49:09 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "ft_list.h"
 
-int	*ft_map(int *tab, int length, int(*f)(int))
+void	ft_list_remove_if(t_list **begin_list,
+void *data_ref, int (*cmp)(), void (*free_fct)(void *))
 {
-	int	n;
-	int	*reb;
-
-	n = 0;
-	reb = malloc(sizeof(int) * length);
-	if (!reb || length < 1)
-		return (NULL);
-	while (n < length)
-	{
-		reb[n] = (*f)(tab[n]);
-		n++;
-	}
-	return (reb);
+	
+	return ;
 }
