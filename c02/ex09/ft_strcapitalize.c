@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 08:52:59 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/08 11:16:04 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/22 09:24:51 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
 char	*ft_strcapitalize(char *str)
 {
 	int		i;
