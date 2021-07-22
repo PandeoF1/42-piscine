@@ -1,7 +1,7 @@
 # [Piscine - 42 Lyon](https://www.42lyon.fr/)
 ## June (05 -> 30) - 2021 | User : [tnard](https://profile.intra.42.fr/users/tnard/)
 
-Note :<br />
+## Note :<br />
 > - [Shell.00](https://github.com/PandeoF1/piscine-42/tree/main/shell00) (100%)<br />
 > - [Shell.01](https://github.com/PandeoF1/piscine-42/tree/main/shell01) (100%)<br />
 > - [C.00](https://github.com/PandeoF1/piscine-42/tree/main/c00) (100%)<br />
