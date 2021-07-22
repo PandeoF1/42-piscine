@@ -5,98 +5,106 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/21 16:13:07 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/22 09:25:32 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/15 13:44:48 by jufabreg          #+#    #+#             */
+/*   Updated: 2021/07/22 13:10:27 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
 
-int			ft_nbrlen(int long n, int long lenbase);
-int			ft_index(char c, char *base);
-int			ft_verifbase(char *base);
-int long	ft_strlen(char *str);
-char		*ft_clean(char *str, char *base);
+int	ft_strlen(char *str);
+int	check_base(char c, char *str);
+int	ft_atoi_base(char *str, char *base);
+int	count_letter(long nbr, char *base);
 
-int	ft_atoi_base(char *str, char *base)
+char	*ft_itoa_base(long nb, char *base)
 {
-	int	neg;
-	int	i;
-	int	result;
-	int	lenbase;
+	char	*res;
+	int		i;
+	int		l;
+	int		trig;
 
-	neg = 1;
-	lenbase = ft_verifbase(base);
-	result = 0;
-	i = 0;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	while (*str && (*str == '-' || *str == '+'))
-	{
-		if (*str == '-')
-			neg *= -1;
-		str++;
-	}
-	str = ft_clean(str, base);
-	while (ft_index(str[i], base) >= 0)
-	{
-		result = ft_index(str[i], base) + result * lenbase;
-		i++;
-	}
-	return (neg * result);
-}
-
-char	*ft_putnbr_base_(char *result, int k, int long nb, char *base)
-{
-	int	sizenb;
-	int	lenbase;
-
-	lenbase = ft_strlen(base);
-	sizenb = ft_nbrlen(nb, lenbase);
-	if (k)
-		result[0] = '-';
-	while (sizenb + k > k)
-	{
-		result[sizenb - 1 + k] = base[nb % lenbase];
-		nb = nb / lenbase;
-		sizenb--;
-	}
-	return (result);
-}
-
-char	*ft_putnbr_base(int nbr, char *base)
-{
-	int long	nb;
-	int long	lenbase;
-	char		*result;
-	int			sizenb;
-	int			k;
-
-	k = 0;
-	lenbase = ft_strlen(base);
-	nb = nbr;
-	result = 0;
-	sizenb = ft_nbrlen(nb, lenbase);
+	trig = 1;
+	l = ft_strlen(base);
+	i = count_letter(nb, base);
 	if (nb < 0)
 	{
-		k++;
-		nb *= -1;
+		nb = -nb;
+		trig++;
 	}
-	result = malloc(sizeof(char) * (sizenb + k) + 1);
-	if (!(result))
+	res = (char *)malloc(sizeof(char) * i + trig);
+	if (!res)
 		return (NULL);
-	result[sizenb + k] = '\0';
-	return (ft_putnbr_base_(result, k, nb, base));
+	res[i] = '\0';
+	while (i-- > 0)
+	{
+		res[i] = base[nb % l];
+		nb /= l;
+	}
+	if (trig == 2)
+		res[0] = '-';
+	return (res);
+}
+
+int	ft_is_base(char *base)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 1;
+	while (base[i])
+	{
+		while (base[i] != base[j] && base[j])
+		{
+			j++;
+		}
+		if (base[i] == base[j])
+			return (0);
+		i++;
+		j = i + 1;
+	}
+	if (i <= 1)
+		return (0);
+	return (1);
+}
+
+int	ft_is_in_base(char *nbr, char *base_from)
+{
+	int		n;
+	int		i;
+	int		count;
+
+	n = 0;
+	i = 0;
+	count = 0;
+	while (nbr[n] == ' ' || (nbr[n] <= 13 && nbr[n] >= 9))
+		n++;
+	while (nbr[n] == '+' || nbr[n] == '-')
+		n++;
+	while (nbr[n])
+	{
+		while (base_from[i])
+		{
+			if (nbr[n] == base_from[i++])
+				count++;
+		}
+		n++;
+	}
+	if (count == 1)
+		return (1);
+	return (0);
 }
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	char	*result;
+	long	nb;
+	char	*toa;
 
-	if (ft_verifbase(base_from) == 0 || ft_verifbase(base_to) == 0)
-		return (0);
-	result = ft_putnbr_base(ft_atoi_base(nbr, base_from), base_to);
-	return (result);
+	if (!ft_is_base(base_from) || !ft_is_base(base_to)
+		|| !ft_is_in_base(nbr, base_from))
+		return (NULL);
+	nb = ft_atoi_base(nbr, base_from);
+	toa = ft_itoa_base(nb, base_to);
+	return (toa);
 }
