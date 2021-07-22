@@ -20,7 +20,7 @@ Note :<br />
 > - [C.13](https://github.com/PandeoF1/piscine-42/tree/main/c13) (x%)<br />
 > - [BSQ](https://github.com/PandeoF1/piscine-42/tree/main/bsq) (x%)<br />
 > - Exam.00 (100%)<br />
-> - sExam.01 (80%)<br />
+> - Exam.01 (80%)<br />
 > - [Rush.00](https://github.com/PandeoF1/piscine-42/tree/main/rush00) (125%)<br />
 > - [Rush.01](https://github.com/PandeoF1/piscine-42/tree/main/rush01) (0%)<br />
 
