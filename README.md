@@ -49,4 +49,4 @@
 ```
 
 ## Tips :
- > - [Some maic.c to test your program](https://www.notion.so/alexheritier/Main-C-944afbadae554ae5a7875256dd7db277) <br />
+ > - [maic.c](https://www.notion.so/alexheritier/Main-C-944afbadae554ae5a7875256dd7db277) <br />
