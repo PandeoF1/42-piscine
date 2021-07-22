@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/21 10:25:03 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/22 12:48:05 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/20 13:47:26 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/22 12:20:40 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_do_op.h"
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-int	main(int argc, char *argv[])
+typedef struct s_list
 {
-	int	n;
+	struct s_list	*next;
+	void			*data;
+}					t_list;
 
-	n = 0;
-	if (argc != 4)
-		return (1);
-	while (argv[2][n])
-		n++;
-	if ((argv[2][0] == '+' || argv[2][0] == '-'
-		|| argv[2][0] == '/' || argv[2][0] == '*'
-		|| argv[2][0] == '%') && n == 1)
-	{
-		ft_calc(ft_atoi(argv[1]), argv[2][0], ft_atoi(argv[3]));
-	}
-	else
-	{
-		ft_putchar('0');
-		ft_putchar('\n');
-	}
-	return (0);
-}
+t_list				*ft_create_elem(void *data);
+
+#endif

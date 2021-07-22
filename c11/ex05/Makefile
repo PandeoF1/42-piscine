@@ -3,17 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
+#    By: tnard <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 12:51:03 by tnard             #+#    #+#              #
-#    Updated: 2021/07/22 09:26:10 by tnard            ###   ########lyon.fr    #
+#    Updated: 2021/07/16 12:51:03 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS		= ft_atoi.c \
-			  ft_op.c \
+			  ft_calc.c \
 			  ft_putchar.c \
 			  ft_putnbr.c \
+			  ft_putstr.c \
 			  main.c
 
 OBJS		= ${SRCS:.c=.o}

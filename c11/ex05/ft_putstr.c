@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_op.c                                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/21 10:24:15 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/22 09:26:04 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/21 10:24:56 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/21 10:24:56 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_do_op.h"
 #include <unistd.h>
+#include "ft_do_op.h"
 
-int	ft_op(int val1, char op, int val2)
+void	ft_putstr(char *str)
 {
-	if (op == '+')
-		return (val1 + val2);
-	if (op == '-')
-		return (val1 - val2);
-	if (op == '/')
-		return (val1 / val2);
-	if (op == '%')
-		return (val1 % val2);
-	return (0);
+	int	n;
+
+	n = 0;
+	while (str[n])
+		write (1, &str[n++], 1);
+	return ;
 }

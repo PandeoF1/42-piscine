@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tnard <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 10:24:50 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/22 09:26:06 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/21 10:24:50 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 void	ft_putnbr(int nb)
 {
-	long int	n;
-
-	n = nb;
-	if (n < 0)
+	if (nb == -2147483648)
 	{
-		n = n * -1;
-		ft_putchar('-');
+		write(1, "-2147483648", 11);
+		return ;
 	}
-	if (n >= 10)
+	if (nb < 0)
 	{
-		ft_putnbr(n / 10);
+		ft_putstr("-");
+		nb = -nb;
 	}
-	ft_putchar(n % 10 + 48);
+	if (nb > 9)
+		ft_putnbr(nb / 10);
+	ft_putchar(nb % 10 + '0');
 }
