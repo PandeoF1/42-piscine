@@ -1,7 +1,7 @@
 # [Piscine - 42 Lyon](https://www.42lyon.fr/)
 ## June (05 -> 30) - 2021 | User : [tnard](https://profile.intra.42.fr/users/tnard/)
 
-## Note :
+## Note
 		- [Shell.00](https://www.42lyon.fr/) (100%)
 		- [Shell.01] (100%)
 		- [C.00] (100%)
