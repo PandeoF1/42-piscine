@@ -40,7 +40,7 @@
 ````
 
 ## Tools :
- > - [maic.c](https://www.notion.so/alexheritier/Main-C-944afbadae554ae5a7875256dd7db277) <br />
+ > - [main.c](https://www.notion.so/alexheritier/Main-C-944afbadae554ae5a7875256dd7db277) <br />
 
 ## (づ｡◕‿‿◕｡)づ :
 ```
