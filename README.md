@@ -11,11 +11,11 @@
 > - [C.04](https://github.com/PandeoF1/piscine-42/tree/main/c04) (100%)<br />
 > - [C.05](https://github.com/PandeoF1/piscine-42/tree/main/c05) (90% (Erreur d'evaluation - 80%))<br />
 > - [C.06](https://github.com/PandeoF1/piscine-42/tree/main/c06) (100%)<br />
-> - [C.07](https://github.com/PandeoF1/piscine-42/tree/main/c07) (-42%)<br />
+> - [C.07](https://github.com/PandeoF1/piscine-42/tree/main/c07) (100%)<br />
 > - [C.08](https://github.com/PandeoF1/piscine-42/tree/main/c08) (100%)<br />
 > - [C.09](https://github.com/PandeoF1/piscine-42/tree/main/c09) (100%)<br />
 > - [C.10](https://github.com/PandeoF1/piscine-42/tree/main/c10) (x%)<br />
-> - [C.11](https://github.com/PandeoF1/piscine-42/tree/main/c11) (10%)<br />
+> - [C.11](https://github.com/PandeoF1/piscine-42/tree/main/c11) (100%)<br />
 > - [C.12](https://github.com/PandeoF1/piscine-42/tree/main/c12) (x%)<br />
 > - [C.13](https://github.com/PandeoF1/piscine-42/tree/main/c13) (x%)<br />
 > - [BSQ](https://github.com/PandeoF1/piscine-42/tree/main/bsq) (x%)<br />
