@@ -1,4 +1,4 @@
-<span style="color: green"># [Piscine - 42 Lyon](https://www.42lyon.fr/)
+# [Piscine - 42 Lyon](https://www.42lyon.fr/)
 > June (05 -> 30) - 2021 | User : [tnard](https://profile.intra.42.fr/users/tnard/)
 
 ## Note :<br />
@@ -51,4 +51,4 @@
      ██║███████╗███████╗██║   ╚██████╔╝██║ ╚████║██╗██║     ██║  ██║
      ╚═╝╚══════╝╚══════╝╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚═╝╚═╝     ╚═╝  ╚═╝
 ```
-</span>
+<span style="color: white">@rthur <3</span>
