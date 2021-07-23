@@ -6,19 +6,19 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 13:47:52 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/23 11:21:05 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/23 13:20:52 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	ft_strswap(char **a, char **b)
+void	ft_swap_list(t_list	**a, t_list	**b)
 {
 	char	*c;
 
-	c = *a;
-	*a = *b;
-	*b = c;
+	tmp = (*a)->data;
+	(*a)->data = (*b)->data;
+	(*b)->data = tmp;
 }
 
 void	ft_list_sort(t_list **begin_list, int (*cmp)())
@@ -33,7 +33,7 @@ void	ft_list_sort(t_list **begin_list, int (*cmp)())
 		(*begin_list) = (*begin_list)->next;
 		if (cmp((*back)->data, (*begin_list)->data) > 0)
 		{
-			ft_strswap((*back)->data, (*begin_list)->data);
+			ft_swap_list(&back, &begin_list);
 			begin_list = save;
 			begin_list = back;
 		}
