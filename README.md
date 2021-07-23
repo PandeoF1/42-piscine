@@ -2,6 +2,7 @@
 > June (05 -> 30) - 2021 | User : [tnard](https://profile.intra.42.fr/users/tnard/)
 
 ## Note :<br />
+```diff
 > - [Shell.00](https://github.com/PandeoF1/piscine-42/tree/main/shell00) (100%)<br />
 > - [Shell.01](https://github.com/PandeoF1/piscine-42/tree/main/shell01) (100%)<br />
 > - [C.00](https://github.com/PandeoF1/piscine-42/tree/main/c00) (100%)<br />
@@ -23,6 +24,7 @@
 > - Exam.01 (80%)<br />
 > - [Rush.00](https://github.com/PandeoF1/piscine-42/tree/main/rush00) (125%)<br />
 > - [Rush.01](https://github.com/PandeoF1/piscine-42/tree/main/rush01) (0%)<br />
+```
 
 ## Header :
 ```` 
@@ -51,4 +53,3 @@
      ██║███████╗███████╗██║   ╚██████╔╝██║ ╚████║██╗██║     ██║  ██║
      ╚═╝╚══════╝╚══════╝╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚═╝╚═╝     ╚═╝  ╚═╝
 ```
-<span style="color: white">@rthur <3</span>
