@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 14:04:31 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/23 14:16:33 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/23 14:25:54 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,4 @@ int	ft_ten_queens_puzzle(void)
 	tot = 0;
 	ft_solve(tab, nbq, &tot);
 	return (tot);
-}
-
-int	main(void)
-{
-	printf("%d\n", ft_ten_queens_puzzle());
-	return (0);
 }
