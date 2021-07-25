@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/11 14:10:55 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 17:00:08 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/10 09:26:58 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/25 16:53:05 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
-{
-	int	result;
-	int	revert;
-	int	n;
+void	rush(int x, int y);
+int		ft_atoi(char *str);
 
-	result = 0;
-	n = 0;
-	revert = 1;
-	while ((str[n] >= 9 && str[n] <= 13) || str[n] == ' ')
-		n++;
-	while (str[n] == '-' || str[n] == '+')
-		if (str[n++] == '-')
-			revert *= -1;
-	result = 0;
-	while (str[n] >= '0' && str[n] <= '9')
-		result = result * 10 + str[n++] - '0';
-	return (result * revert);
+int	main(int argc, char *argv[])
+{
+	if (argc == 3)
+		rush(atoi(argv[1]), atoi(argv[2]));
+	else
+		rush(5, 5);
+	return (0);
 }
