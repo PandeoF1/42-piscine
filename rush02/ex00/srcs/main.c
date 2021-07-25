@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:25 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 10:57:29 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 11:07:22 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int	main(int argc, char *argv[])
 {
 	char	*path_to_dict;
 	t_rush	**parse;
+	t_rush	**parse_verif;
 
 	parse = NULL;
 	path_to_dict = ft_strdup("numbers.dict");
@@ -69,7 +70,8 @@ int	main(int argc, char *argv[])
 	else
 		return (error());
 	parse = ft_parse(path_to_dict, 0);
-	if (parse == NULL || !ft_is_valid_file(parse))
+	parse_verif = ft_parse("ref.dict", 0);
+	if (parse == NULL || ft_is_valid_file(parse, parse_verif))
 		return (dict_error());
 	return (end());
 }

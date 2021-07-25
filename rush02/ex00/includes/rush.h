@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:23 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 10:57:49 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 11:07:37 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	**ft_split(char *str, char b);
 int		ft_strnumber(char param[]);
 char	*ft_strdup(char *src);
 int		ft_is_valid_line(char	*src);
-int		ft_is_valid_file(t_rush	**parse);
+int		ft_is_valid_file(t_rush	**parse, t_rush **parse_verif);
+
+t_rush	*ft_search_by_id_(t_rush **pairs, char *id);
 
 #endif

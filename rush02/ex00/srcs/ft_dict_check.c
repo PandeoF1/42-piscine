@@ -6,11 +6,12 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 09:42:58 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 10:58:21 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 11:24:34 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
+#include <stdlib.h>
 
 int	ft_is_valid_line(char	*src)
 {
@@ -37,14 +38,25 @@ int	ft_is_valid_line(char	*src)
 	return (0);
 }
 
-int	ft_is_valid_file(t_rush	**parse)
+int	ft_is_valid_file(t_rush	**parse, t_rush **parse_verif)
 {
-	int	n;
+	int		a;
+	int		b;
+	t_rush	*tmp;
 
-	n = 0;
-	while (parse[n])
+	a = 0;
+	b = 0;
+	while (parse_verif[a])
 	{
-		n++;
+		while (parse[b])
+		{
+			tmp = ft_search_by_id_(parse, parse_verif[a]->value);
+			if (tmp == NULL)
+				return (1);
+			b++;
+		}
+		b = 0;
+		a++;
 	}
 	return (0);
 }
