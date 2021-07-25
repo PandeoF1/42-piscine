@@ -6,14 +6,14 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 11:31:51 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/24 18:06:42 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 12:36:09 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
 #include <stdlib.h>
 
-int	ft_init_rush(t_rush *this, char *value, char *name)
+int	ft_init(t_rush *this, char *value, char *name)
 {
 	int	value_size;
 	int	name_size;

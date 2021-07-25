@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_search.c                                        :+:      :+:    :+:   */
+/*   ft_destroy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/24 10:36:25 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 12:25:14 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/25 12:32:41 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/25 13:08:06 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
 #include <stdlib.h>
 
-t_rush	*ft_search_by_id_parse(t_rush **parse, char *id)
+void	ft_destroy(t_rush **parse, t_rush **parse_verif, char *path_to_dict)
 {
-	int	i;
+	int	a;
 
-	i = 0;
-	while (parse[i])
+	a = 0;
+	while (parse[a])
 	{
-		if (!ft_strcmp(id, parse[i]->value))
-			return (parse[i]);
-		i++;
+		free(parse[a]->name);
+		free(parse[a]->value);
+		free(parse[a]);
+		a++;
 	}
-	return (NULL);
-}
-
-t_rush	*ft_search_by_id(t_rush *pairs, int size, char *id)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
+	free(parse);
+	a = 0;
+	while (parse_verif[a])
 	{
-		if (!ft_strcmp(id, pairs[i].value))
-			return (&pairs[i]);
-		i++;
+		free(parse_verif[a]->name);
+		free(parse_verif[a]->value);
+		free(parse_verif[a]);
+		a++;
 	}
-	return (NULL);
+	free(parse_verif);
+	free(path_to_dict);
 }

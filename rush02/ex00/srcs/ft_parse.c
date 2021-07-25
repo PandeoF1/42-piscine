@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:25 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 10:54:34 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 13:37:00 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	*ft_explode(char *content, int n)
 	{
 		while (content[a] && content[a] != ':')
 			a++;
-		while (content[a] && content[a] >= 33)
+		while (content[a] && content[a] >= 32) //33 ici
 			a++;
 		while (content[a])
 			test[b++] = content[a++];
@@ -73,10 +73,9 @@ char	*ft_explode(char *content, int n)
 	return (test);
 }
 
-t_rush	**ft_parse(char *filename, int a)
+t_rush	**ft_parse(char *filename, int a, int fd)
 {
 	t_rush	**parse;
-	int		fd;
 	char	*content;
 	char	**dest;
 
@@ -87,6 +86,7 @@ t_rush	**ft_parse(char *filename, int a)
 	if (fd != STDIN_FILENO)
 		close(fd);
 	dest = ft_split(content, '\n');
+	free(content);
 	while (dest[a])
 		a++;
 	parse = malloc(sizeof(t_rush *) * a + 1);
@@ -96,9 +96,10 @@ t_rush	**ft_parse(char *filename, int a)
 	while (dest[++a])
 	{
 		parse[a] = malloc(sizeof(t_rush));
-		if (ft_is_valid_line(dest[a]) == 0 || !parse)
+		if (ft_is_valid_line(dest[a]) == 0 || !parse || ft_init(
+				parse[a], ft_explode(dest[a], 1), ft_explode(dest[a], 0)))
 			return (NULL);
-		ft_init_rush(parse[a], ft_explode(dest[a], 1), ft_explode(dest[a], 0));
 	}
+	free(dest);
 	return (parse);
 }
