@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:25 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 15:25:37 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 18:15:00 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ t_rush	**ft_parse(char *filename, int a, int fd)
 	dest = ft_split(content, '\n');
 	while (dest[a])
 		a++;
-	parse = malloc(sizeof(t_rush *) * a + 1);
+	parse = malloc(sizeof(t_rush *) * a + 10);
 	if (!parse)
 		return (NULL);
 	a = -1;

@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:25 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 15:42:45 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 17:46:50 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,29 +42,40 @@ int	ft_checkarg(char *argv)
 	return (1);
 }
 
+int	ft_parselen(t_rush **parse)
+{
+	int	n;
+
+	n = 0;
+	while (parse[n])
+		n++;
+	return (n);
+}
+
 int	main(int argc, char *argv[])
 {
 	char	*path_to_dict;
 	t_rush	**parse;
 	t_rush	**parse_verif;
-	int		cargc;
+	int		count;
 
 	parse = NULL;
 	path_to_dict = ft_strdup("numbers.dict");
-	cargc = argc - 1;
 	if (argc == 3)
 		path_to_dict = ft_strdup(argv[1]);
 	else if (argc == 2)
 		path_to_dict = ft_strdup("numbers.dict");
 	else
 		return (error());
-	if (ft_checkarg(argv[1]))
+	if (ft_checkarg(argv[argc - 1]))
 		return (error());
 	parse = ft_parse(path_to_dict, 0, 0);
 	parse_verif = ft_parse("ref.dict", 0, 0);
 	if (parse == NULL || ft_is_valid_file(parse, parse_verif)
 		|| parse_verif == NULL)
 		return (dict_error());
+	count = ft_parselen(parse);
+	ft_print_litteral_nu(argv[argc - 1], parse, count);
 	ft_destroy(parse, parse_verif, path_to_dict);
 	return (0);
 }
