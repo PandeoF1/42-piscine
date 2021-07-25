@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:25 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 13:37:00 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 15:25:37 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,40 @@ char	*ft_file_read(int fd, int size, int len)
 	return (value);
 }
 
-char	*ft_explode(char *content, int n)
+int	ft_strlen_content(const char *str, int n)
+{
+	int	i;
+	int	a;
+
+	i = 0;
+	a = 0;
+	if (n == 1)
+	{
+		while (str[i] && str[i] <= '9' && str[i] >= '0')
+			i++;
+		return (i);
+	}
+	else if (n == 1)
+	{
+		while (str[a] && str[a] != ':')
+			a++;
+		a++;
+		while (str[a] && str[a] == ' ')
+			a++;
+		while (str[a] && str[a + i] != '\n')
+			i++;
+		return (i);
+	}
+	return (i);
+}
+
+char	*ft_explode(char *content, int n, int a, int b)
 {
 	char	*test;
-	int		a;
-	int		b;
 
-	test = malloc(sizeof(char) * ft_strlen(content) + 1);
+	test = malloc(sizeof(char) * ft_strlen_content(content, n) + 1);
 	if (!test)
 		return (NULL);
-	a = 0;
-	b = 0;
 	if (n == 1)
 	{
 		while (content[a] && content[a] <= '9' && content[a] >= '0')
@@ -64,9 +87,10 @@ char	*ft_explode(char *content, int n)
 	{
 		while (content[a] && content[a] != ':')
 			a++;
-		while (content[a] && content[a] >= 32) //33 ici
+		a++;
+		while (content[a] && content[a] == ' ')
 			a++;
-		while (content[a])
+		while (content[a] && content[a] != '\n')
 			test[b++] = content[a++];
 	}
 	test[b] = '\0';
@@ -86,7 +110,6 @@ t_rush	**ft_parse(char *filename, int a, int fd)
 	if (fd != STDIN_FILENO)
 		close(fd);
 	dest = ft_split(content, '\n');
-	free(content);
 	while (dest[a])
 		a++;
 	parse = malloc(sizeof(t_rush *) * a + 1);
@@ -96,10 +119,9 @@ t_rush	**ft_parse(char *filename, int a, int fd)
 	while (dest[++a])
 	{
 		parse[a] = malloc(sizeof(t_rush));
-		if (ft_is_valid_line(dest[a]) == 0 || !parse || ft_init(
-				parse[a], ft_explode(dest[a], 1), ft_explode(dest[a], 0)))
+		if (ft_is_valid_line(dest[a]) == 0 || !parse || ft_init(parse[a],
+				ft_explode(dest[a], 1, 0, 0), ft_explode(dest[a], 0, 0, 0)))
 			return (NULL);
 	}
-	free(dest);
 	return (parse);
 }

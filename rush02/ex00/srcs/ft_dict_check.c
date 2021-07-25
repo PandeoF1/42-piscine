@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 09:42:58 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 13:27:42 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 15:09:45 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_is_valid_line(char	*src)
 		n++;
 	while (src[n] && (src[n] >= 32))
 		n++;
-	if (n == i && src[n - 1] != ' ')
+	if (n == i)
 		return (1);
 	return (0);
 }
@@ -78,6 +78,5 @@ int	ft_is_valid_file(t_rush	**parse, t_rush **parse_verif)
 		b = 0;
 		a++;
 	}
-	free(tmp);
 	return (0);
 }
