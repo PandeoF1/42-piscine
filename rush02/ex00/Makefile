@@ -6,12 +6,12 @@
 #    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 12:51:03 by tnard             #+#    #+#              #
-#    Updated: 2021/07/25 09:59:32 by tnard            ###   ########lyon.fr    #
+#    Updated: 2021/07/25 10:40:49 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCE	= srcs/
-SRCS    = ft_dict_check.c ft_clear_rush.c ft_init_rush.c ft_parse.c ft_putchar.c ft_putstr.c ft_split.c ft_strcmp.c ft_strcpy.c ft_strdup.c ft_strlen.c ft_strncpy.c ft_tab_next_strlen.c ft_tab_strlen.c main.c
+SRCS    = ft_search.c ft_dict_check.c ft_clear_rush.c ft_init_rush.c ft_parse.c ft_putchar.c ft_putstr.c ft_split.c ft_strcmp.c ft_strcpy.c ft_strdup.c ft_strlen.c ft_strncpy.c ft_tab_next_strlen.c ft_tab_strlen.c main.c
 OBJS	= ${addprefix ${SOURCE},${SRCS:.c=.o}}
 HEAD	= includes
 CC		= gcc

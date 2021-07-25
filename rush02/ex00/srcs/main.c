@@ -6,17 +6,29 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:25 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 10:23:22 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 10:57:29 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
 #include <stdlib.h>
+#include <stdio.h>
+
+int	end(void)
+{
+	return (0);
+}
 
 int	error(void)
 {
 	ft_putstr("Error\n");
-	return (0);
+	return (end());
+}
+
+int	dict_error(void)
+{
+	ft_putstr("Dict Error\n");
+	return (end());
 }
 
 int	ft_checkarg(char *argv)
@@ -39,7 +51,6 @@ int	main(int argc, char *argv[])
 {
 	char	*path_to_dict;
 	t_rush	**parse;
-	int		error_value;
 
 	parse = NULL;
 	path_to_dict = ft_strdup("numbers.dict");
@@ -57,8 +68,8 @@ int	main(int argc, char *argv[])
 	}
 	else
 		return (error());
-	error_value = ft_parse(parse, path_to_dict, 0);
-	if (error_value == -1)
-		ft_putstr("Dict Error\n");
-	return (0);
+	parse = ft_parse(path_to_dict, 0);
+	if (parse == NULL || !ft_is_valid_file(parse))
+		return (dict_error());
+	return (end());
 }

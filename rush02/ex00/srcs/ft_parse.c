@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:25 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 10:15:44 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 10:54:34 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,16 @@ char	*ft_explode(char *content, int n)
 	return (test);
 }
 
-int	ft_parse(t_rush	**parse, char *filename, int a)
+t_rush	**ft_parse(char *filename, int a)
 {
+	t_rush	**parse;
 	int		fd;
 	char	*content;
 	char	**dest;
 
 	fd = open(filename, O_RDWR);
 	if (fd < 0)
-		return (-1);
+		return (NULL);
 	content = ft_file_read(fd, 0, 0);
 	if (fd != STDIN_FILENO)
 		close(fd);
@@ -90,14 +91,14 @@ int	ft_parse(t_rush	**parse, char *filename, int a)
 		a++;
 	parse = malloc(sizeof(t_rush *) * a + 1);
 	if (!parse)
-		return (-1);
+		return (NULL);
 	a = -1;
 	while (dest[++a])
 	{
 		parse[a] = malloc(sizeof(t_rush));
 		if (ft_is_valid_line(dest[a]) == 0 || !parse)
-			return (-1);
+			return (NULL);
 		ft_init_rush(parse[a], ft_explode(dest[a], 1), ft_explode(dest[a], 0));
 	}
-	return (0);
+	return (parse);
 }
