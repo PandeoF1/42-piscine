@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnumber.c                                     :+:      :+:    :+:   */
+/*   ft_clear_rush.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/24 14:16:34 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/24 18:18:59 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/24 11:31:48 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/25 09:38:47 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
-#include <stdio.h>
+#include <stdlib.h>
 
-int ft_strnumber(char param[])
+void	ft_clear_rush(t_rush *this)
 {
-    int i;
-    
-    i = 0;
-    if (param[1] > 37)
-    ft_strlen(param[]);
-        return (error());
-    return (0);
+	free(this->value);
+	free(this->name);
 }

@@ -6,13 +6,14 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:25 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/24 18:19:28 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 10:15:44 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 #include "rush.h"
 
 char	*ft_file_read(int fd, int size, int len)
@@ -57,11 +58,7 @@ char	*ft_explode(char *content, int n)
 	if (n == 1)
 	{
 		while (content[a] && content[a] <= '9' && content[a] >= '0')
-		{
-			test[b] = content[a];
-			b++;
-			a++;
-		}
+			test[b++] = content[a++];
 	}
 	else if (n == 0)
 	{
@@ -70,72 +67,37 @@ char	*ft_explode(char *content, int n)
 		while (content[a] && content[a] >= 33)
 			a++;
 		while (content[a])
-		{
-			test[b] = content[a];
-			b++;
-			a++;
-		}
+			test[b++] = content[a++];
 	}
 	test[b] = '\0';
-	dprintf(1, "%s - %d\n", test, n);
 	return (test);
 }
 
-int	ft_parse(t_rush	**parse, char *filename)
+int	ft_parse(t_rush	**parse, char *filename, int a)
 {
 	int		fd;
 	char	*content;
-	char	**content_explode;
-	int		a;
-	int		b;
+	char	**dest;
 
-	a = 0;
-	b = 0;
 	fd = open(filename, O_RDWR);
 	if (fd < 0)
 		return (-1);
 	content = ft_file_read(fd, 0, 0);
 	if (fd != STDIN_FILENO)
 		close(fd);
-	dprintf(1, "%s", content);
-	dprintf(1, "\n------\n");
-	content_explode = ft_split(content, '\n');
-	while (content_explode[a])
+	dest = ft_split(content, '\n');
+	while (dest[a])
 		a++;
 	parse = malloc(sizeof(t_rush *) * a + 1);
 	if (!parse)
 		return (-1);
-	a = 0;
-	while (content_explode[a])
+	a = -1;
+	while (dest[++a])
 	{
 		parse[a] = malloc(sizeof(t_rush));
-		if (!parse)
+		if (ft_is_valid_line(dest[a]) == 0 || !parse)
 			return (-1);
-		ft_init_rush(parse[a], ft_explode(content_explode[a], 1),
-			ft_explode(content_explode[a], 0));
-		a++;
-	}
-	a = 0;
-	while (content_explode[a])
-	{
-		dprintf(1, "%d", a);
-		dprintf(1, " | ");
-		dprintf(1, "%s", parse[a]->value);
-		dprintf(1, " | ");
-		dprintf(1, "%s\n", parse[a]->name);
-		a++;
+		ft_init_rush(parse[a], ft_explode(dest[a], 1), ft_explode(dest[a], 0));
 	}
 	return (0);
-}
-
-int	main(void)
-{
-	char	file[50];
-	t_rush	**parse;
-	int		error;
-
-	ft_strcpy(file, "numbers.dict");
-	error = ft_parse(parse, file);
-	if (error == -1)
-		ft_putstr("Dict Error\n");
 }

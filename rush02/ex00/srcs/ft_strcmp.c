@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_clear_rush.c                                    :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/24 11:31:48 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/24 14:10:23 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/24 11:00:08 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/25 09:38:07 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush.h"
-#include <stdlib.h>
-
-void	ft_clear_rush(t_rush *this)
+int	ft_strcmp(char *s1, char *s2)
 {
-	free(this->value);
-	free(this->name);
+	int	i;
+
+	i = 0;
+	while (s1[i] || s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		++i;
+	}
+	return (0);
 }

@@ -6,12 +6,13 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:25 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/24 15:52:53 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 10:03:53 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
 #include <stdlib.h>
+#include<stdio.h>
 
 t_rush	*ft_search_by_id(t_rush *pairs, int size, char *id)
 {
@@ -27,11 +28,9 @@ t_rush	*ft_search_by_id(t_rush *pairs, int size, char *id)
 	return (NULL);
 }
 
-#include<stdio.h>
-
-int main()
+int	main(void)
 {
-	t_rush dict[32];
+/*	t_rush dict[32];
 	t_rush	p0;
 	t_rush	p1;
 	t_rush	p2;
@@ -131,5 +130,5 @@ int main()
 	dict[28] = p100;
 	dict[29] = p100;
 	dict[30] = p1000;
-	dict[31] = p10000;
+	dict[31] = p10000;*/
 }

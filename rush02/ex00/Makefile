@@ -6,25 +6,25 @@
 #    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 12:51:03 by tnard             #+#    #+#              #
-#    Updated: 2021/07/24 10:36:27 by tnard            ###   ########lyon.fr    #
+#    Updated: 2021/07/25 09:59:32 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		= main.c
+SOURCE	= srcs/
+SRCS    = ft_dict_check.c ft_clear_rush.c ft_init_rush.c ft_parse.c ft_putchar.c ft_putstr.c ft_split.c ft_strcmp.c ft_strcpy.c ft_strdup.c ft_strlen.c ft_strncpy.c ft_tab_next_strlen.c ft_tab_strlen.c main.c
+OBJS	= ${addprefix ${SOURCE},${SRCS:.c=.o}}
+HEAD	= includes
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror
+NAME	= rush-02
 
-OBJS		= ${SRCS:.c=.o}
-
-NAME		= rush-02
-
-CFLAGS		= -Wall -Wextra -Werror
-
-all:		${NAME}
+.c.o:
+			${CC} ${CFLAGS} -I ${HEAD} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
 			gcc ${CFLAGS} $^ -o $@
 
-.c.o:
-			gcc ${CFLAGS} -c $< -o ${<:.c=.o}
+all :		${NAME}
 
 clean:
 			rm -f ${OBJS}

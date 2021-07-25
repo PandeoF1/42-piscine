@@ -6,18 +6,20 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 15:58:55 by vsandre           #+#    #+#             */
-/*   Updated: 2021/07/24 18:18:39 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 10:02:00 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
-t_rush *find_max_of(char *number, t_rush *map, int map_size)
+#include <stdio.h>
+
+t_rush	*find_max_of(char *number, t_rush *map, int map_size)
 {
-	int number_size;
-	int i;
+	int	number_size;
+	int	i;
 	int	max_len;
-	int max_len_index;
-	
+	int	max_len_index;
+
 	number_size = ft_strlen(number);
 	i = -1;
 	max_len = 0;
@@ -32,23 +34,19 @@ t_rush *find_max_of(char *number, t_rush *map, int map_size)
 	return (&map[max_len_index]);
 }
 
-
-
-void    ft_print_litteral_nu(char *str_nu)
+void	ft_print_litteral_nu(char *str_nu)
 {
-	int i;
-	int str_nu_size;
+	int	i;
+	int	str_nu_size;
 
 	str_nu_size = ft_strlen(str_nu);
-	while(*str_nu)
+	while (*str_nu)
 	{
-		
 		str_nu++;
 	}
 }
 
-#include <stdio.h>
-int main()
+int	main(void)
 {
 /*	t_rush dict[32];
 	t_rush	p0;
@@ -150,9 +148,8 @@ int main()
 	dict[28] = p100;
 	dict[29] = p100;
 	dict[30] = p1000;
-	dict[31] = p10000;*/
-
+	dict[31] = p10000; */
 	//char* toto =find_max_of("2000", dict, 31)->name;
-	dprintf(1,"fdbdf");
+	dprintf (1, "fdbdf");
 	return (0);
 }
