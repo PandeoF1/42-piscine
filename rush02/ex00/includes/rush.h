@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:23 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 17:32:28 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 18:55:37 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int		ft_is_valid_line(char	*src);
 int		ft_is_valid_file(t_rush	**parse, t_rush **parse_verif);
 t_rush	*ft_search_by_id_parse(t_rush **pairs, char *id);
 void	ft_destroy(t_rush **parse, t_rush **parse_verif, char *path_to_dict);
-void	ft_print_litteral_nu(char *str_nu, t_rush **map, int map_size);
+void	ft_print_litteral_nu(char *str_nu, t_rush **map, int map_size, int a);
+void	ft_putstr_space(char *str, int a);
 
 #endif

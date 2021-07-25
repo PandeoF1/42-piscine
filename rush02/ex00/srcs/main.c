@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:25 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 17:46:50 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 18:59:11 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ int	main(int argc, char *argv[])
 		|| parse_verif == NULL)
 		return (dict_error());
 	count = ft_parselen(parse);
-	ft_print_litteral_nu(argv[argc - 1], parse, count);
+	ft_print_litteral_nu(argv[argc - 1], parse, count, 0);
 	ft_destroy(parse, parse_verif, path_to_dict);
+	ft_putchar('\n');
 	return (0);
 }

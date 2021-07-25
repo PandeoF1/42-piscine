@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 15:58:55 by vsandre           #+#    #+#             */
-/*   Updated: 2021/07/25 18:35:23 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/25 19:32:32 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	ft_countz_before(char *number)
 	return (i);
 }
 
-void	ft_print_litteral_nu(char *str_n, t_rush **map, int map_size)
+void	ft_print_litteral_nu(char *str_n, t_rush **map, int map_size, int a)
 {
 	int		trpos;
 	int		str_nu_size;
@@ -107,31 +107,22 @@ void	ft_print_litteral_nu(char *str_n, t_rush **map, int map_size)
 
 	str_nu_size = ft_strlen(str_n);
 	if (str_nu_size == 1)
-		ft_putstr(ft_search_by_id(map, map_size, str_n)->name);
-	if (str_nu_size == 2)
+		ft_putstr_space(ft_search_by_id(map, map_size, str_n)->name, a);
+	else if (str_nu_size == 2)
 	{
-		ft_putstr(find_max_of_dualnu(str_n, map, map_size)->name);
+		ft_putstr_space(find_max_of_dualnu(str_n, map, map_size)->name, 0);
 		if (ft_strcmp(find_max_of_dualnu(str_n, map, map_size)->value, str_n)
 			!= 0)
-		{
-			ft_putchar(' ');
-			ft_print_litteral_nu(str_n + 1, map, map_size);
-		}
+			ft_print_litteral_nu(str_n + 1, map, map_size, 0);
 	}
-	if (str_nu_size > 2)
+	else if (str_nu_size > 2)
 	{
 		len_of_max = ft_strlen(find_max_of(str_n, map, map_size)->value);
 		trpos = str_nu_size - len_of_max;
 		str_nu_trunced = ft_strndup(str_n, trpos + 1);
-		ft_print_litteral_nu(str_nu_trunced, map, map_size);
-		ft_putchar(' ');
-		ft_putstr(find_max_of(str_n, map, map_size)->name);
-		if (ft_strcmp(find_max_of_dualnu(str_n, map, map_size)->value, str_n)
-			!= 0)
-		{
-			ft_putchar(' ');
-			trpos += ft_countz_before(str_n + trpos + 1);
-			ft_print_litteral_nu(str_n + trpos + 1, map, map_size);
-		}
+		ft_print_litteral_nu(str_nu_trunced, map, map_size, 0);
+		ft_putstr_space(find_max_of(str_n, map, map_size)->name, 0);
+		trpos += ft_countz_before(str_n + trpos + 1);
+		ft_print_litteral_nu(str_n + trpos + 1, map, map_size, 1);
 	}
 }
