@@ -22,7 +22,7 @@
 > - Exam.00 (100%)<br />
 > - Exam.01 (80%)<br />
 > - [Rush.00](https://github.com/PandeoF1/piscine-42/tree/main/rush00) (125%)<br />
-> - [Rush.01](https://github.com/PandeoF1/piscine-42/tree/main/rush01) (0%)<br />
+> - [Rush.01](https://github.com/PandeoF1/piscine-42/tree/main/rush01) (0% - Cursed view check)<br />
 > - [Rush.02](https://github.com/PandeoF1/piscine-42/tree/main/rush02) (x%)<br />
 
 ## Header :
@@ -42,6 +42,8 @@
 
 ## Tools :
  > - [main.c](https://www.notion.so/alexheritier/Main-C-944afbadae554ae5a7875256dd7db277) <br />
+ > - [norminette](https://github.com/42School/norminette) <br />
+ > - [Makefile](https://nicomedes.assistedcoding.eu/#/app/makefilegen) <br />
 
 ## (づ｡◕‿‿◕｡)づ :
 ```
