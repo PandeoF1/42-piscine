@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:26:57 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/26 17:27:01 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/26 17:37:52 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,15 @@ int	main(int argc, char *argv[])
 	n = 0;
 	a = 0;
 	value = malloc(sizeof(char) * 3);
-	if (!value)
+	if (!value || argc == 1)
 		return (error());
-	if (argc == 1)
-		return (error());
-	dprintf(1, "---------------\n");
 	while (++n < argc)
 	{
 		content = ft_parse(argv[n], 0, 0, 0);
 		if (content != NULL && ft_check_first_line(content, &value)
 			&& ft_check_file(content, value)) //value[0] = '.' value[0] = 'o' value[0] = 'x' 
 		{
-			ft_putstr("yo\n");
+			ft_putstr("c ici que l'on resolve la map (en 3 ligne (+ elle))\n");
 		}
 		else
 			map_error();
