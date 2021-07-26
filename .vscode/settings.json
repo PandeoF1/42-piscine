@@ -2,6 +2,8 @@
 	"files.associations": {
 		"stdlib.h": "c",
 		"unistd.h": "c",
-		"ft_list.h": "c"
+		"ft_list.h": "c",
+		"bsq.h": "c",
+		"rush.h": "c"
 	}
 }

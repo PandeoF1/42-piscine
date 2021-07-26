@@ -6,9 +6,9 @@
  > - [molatrec](https://profile.intra.42.fr/users/molatrec)
 
 ### Todo :
-- [ ] Verification de l'existence du fichier et des permissions.
+- [x] Verification de l'existence du fichier et des permissions.
 - [ ] Verification 1er ligne fichier
-- [ ] Verification du format du fichier. (la map)
+- [x] Verification du format du fichier. (la map)
 
 ### Resolve :
 - [ ] UwU
