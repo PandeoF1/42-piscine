@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 09:34:01 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/22 09:28:50 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/26 12:14:48 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,11 @@ int	ft_solve(int **tab, int x, int y, int size)
 	n = 0;
 	while (++n <= size)
 	{
+		/*ft_putstr("-----------------\n");  //Debug section
+		ft_show(tab, size);
+		ft_putstr("-----------------\n");
+		usleep(100000);
+		system("clear");*/
 		tab[y][x] = n;
 		if (ft_check_total(tab, x, y, size))
 		{
