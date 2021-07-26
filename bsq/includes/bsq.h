@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:23 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/26 15:29:35 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/26 17:21:46 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ char	*ft_strdup(char *src);
 char	**ft_parse(char *filename, int a, int fd, int len);
 char	**ft_split(char *str, char b);
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
-int		ft_check_first_line(char **content, char *value);
+int		ft_check_first_line(char **content, char **value);
+int		ft_check_file(char **content, char *value);
 
 #endif

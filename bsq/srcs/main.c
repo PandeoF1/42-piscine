@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:26:57 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/26 15:30:28 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/26 17:27:01 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,31 +20,38 @@ int	error(void)
 	return (-1);
 }
 
+int	map_error(void)
+{
+	ft_putstr("map error\n");
+	return (-1);
+}
+
 int	main(int argc, char *argv[])
 {
 	int		n;
 	int		a;
 	char	**content;
-	char	value[3];
+	char	*value;
 
 	n = 0;
 	a = 0;
+	value = malloc(sizeof(char) * 3);
+	if (!value)
+		return (error());
 	if (argc == 1)
 		return (error());
+	dprintf(1, "---------------\n");
 	while (++n < argc)
 	{
 		content = ft_parse(argv[n], 0, 0, 0);
-		if (content != NULL && ft_check_first_line(content, value))
+		if (content != NULL && ft_check_first_line(content, &value)
+			&& ft_check_file(content, value)) //value[0] = '.' value[0] = 'o' value[0] = 'x' 
 		{
-			dprintf(1, "%c\n", value[0]);
-			dprintf(1, "%c\n", value[1]);
-			dprintf(1, "%c\n", value[2]);
-			a = 0;
-			while (content[a])
-				dprintf(1, "%s\n", content[a++]);
+			ft_putstr("yo\n");
 		}
 		else
-			error();
+			map_error();
 	}
+	free(value);
 	return (0);
 }

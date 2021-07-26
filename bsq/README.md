@@ -7,8 +7,9 @@
 
 ### Todo :
 - [x] Verification de l'existence du fichier et des permissions.
-- [ ] Verification 1er ligne fichier
+- [x] Verification 1er ligne fichier
 - [x] Verification du format du fichier. (la map)
+- [x] Verification des char dans le fichier (char invalide = error). (la map)
 
 ### Resolve :
 - [ ] UwU
