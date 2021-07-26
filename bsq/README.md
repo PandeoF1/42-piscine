@@ -1,7 +1,7 @@
 ## Error :
  > - Project is empty UwU
 
- ## Contributor :
+## Contributor :
  > - [tnard](https://profile.intra.42.fr/users/tnard)
  > - [molatrec](https://profile.intra.42.fr/users/molatrec)
 
