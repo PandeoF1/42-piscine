@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_clear.c                                    :+:      :+:    :+:   */
+/*   ft_scanff.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/20 16:05:19 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/27 15:18:04 by tnard            ###   ########lyon.fr   */
+/*   Created: 2021/07/27 15:39:30 by tnard             #+#    #+#             */
+/*   Updated: 2021/07/27 15:46:55 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-#include <stdlib.h>
+#include "bsq.h"
 
-void	ft_list_clear(t_list *begin_list, void (*free_fct)(void *))
+char	*ft_scanff(void)
 {
-	t_list	*tmp;
+	int		count;
+	char	mini_buff;
+	char	buff[5000];
+	char	*str;
 
-	while (begin_list)
-	{
-		tmp = begin_list->next;
-		(*free_fct)(begin_list->data);
-		free(begin_list);
-		begin_list = tmp;
-	}
-	begin_list = 0;
+	count = 0;
+	while (read(0, &mini_buff, 1))
+		buff[count++] = mini_buff;
+	buff[count] = 0;
+	str = malloc((count) * sizeof(char));
+	count = -1;
+	while (buff[++count])
+		str[count] = buff[count];
+	str[count] = 0;
+	return (str);
 }

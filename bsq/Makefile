@@ -6,13 +6,13 @@
 #    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 12:51:03 by tnard             #+#    #+#              #
-#    Updated: 2021/07/27 06:43:53 by molatrec         ###   ########lyon.fr    #
+#    Updated: 2021/07/27 15:46:40 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCE	= srcs/
 SRCS    = main.c ft_parse.c ft_putchar.c ft_putstr.c ft_strcpy.c ft_strdup.c \
-		  ft_strlen.c ft_split.c ft_strncpy.c ft_check.c ft_solve.c ft_solve2.c
+		  ft_strlen.c ft_split.c ft_strncpy.c ft_check.c ft_solve.c ft_solve2.c ft_scanff.c
 OBJS	= ${addprefix ${SOURCE},${SRCS:.c=.o}}
 HEAD	= includes
 CC		= gcc
