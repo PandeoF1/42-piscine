@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:26:57 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/26 17:37:52 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/27 07:15:22 by molatrec         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int argc, char *argv[])
 		if (content != NULL && ft_check_first_line(content, &value)
 			&& ft_check_file(content, value)) //value[0] = '.' value[0] = 'o' value[0] = 'x' 
 		{
-			ft_putstr("c ici que l'on resolve la map (en 3 ligne (+ elle))\n");
+			ft_printing(&content[1]);
 		}
 		else
 			map_error();
