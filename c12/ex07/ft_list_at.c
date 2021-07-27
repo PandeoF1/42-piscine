@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 12:50:52 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/22 09:26:29 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/27 14:19:25 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
 {
-	int	count;
+	unsigned int	count;
 
 	count = 0;
 	while (begin_list)
 	{
-		begin_list = begin_list->next;
 		if (count == nbr)
 			return (begin_list);
+		begin_list = begin_list->next;
+		count++;
 	}
 	return (begin_list);
 }

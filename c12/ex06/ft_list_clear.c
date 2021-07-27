@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 16:05:19 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/22 09:26:28 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/27 14:13:35 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 void	ft_list_clear(t_list *begin_list, void (*free_fct)(void *))
 {
-	int	count;
+	t_list	*tmp;
 
-	count = 0;
 	while (begin_list)
 	{
-		begin_list = begin_list->next;
-		count++;
+		tmp = begin_list->next;
+		(*free_fct)(begin_list->data);
+		free(begin_list);
+		begin_list = tmp;
 	}
-	return (count);
+	begin_list = 0;
 }
