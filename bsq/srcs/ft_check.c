@@ -6,31 +6,39 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 15:16:03 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/26 17:25:07 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/27 18:07:19 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "bsq.h"
 
-int	ft_check_first_line(char **content, char **value)
+int	ft_check_b(char **content, char **value)
 {
 	int	a;
+	int	i;
 	int	n;
 
 	a = 0;
 	n = -1;
 	while (content[0][a])
 		a++;
-	while (++n < a - 3) //4 = 3 + le char avant ou t'arrive
+	while (++n < a - 3)
 		if (content[0][n] < '0' || content[0][n] > '9')
 			return (0);
 	(*value)[0] = content[0][n];
 	(*value)[1] = content[0][n + 1];
 	(*value)[2] = content[0][n + 2];
+	content[0][n] = '\0';
+	i = ft_atoi(content[0]);
+	while (content[a])
+		a++;
+	if (a - 1 != i)
+		return (0);
 	return (1);
 }
 
-int	ft_check_file(char **content, char *value)
+int	ft_check_a(char **content, char *value)
 {
 	int	a;
 	int	b;
