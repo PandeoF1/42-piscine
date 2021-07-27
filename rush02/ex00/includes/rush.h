@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BSQ_H
-# define BSQ_H
+#ifndef RUSH_H
+# define RUSH_H
 
 typedef struct s_rush
 {
