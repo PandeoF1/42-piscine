@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 15:26:26 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/27 15:26:33 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/28 17:55:09 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
+
 void	ft_printhex(unsigned char *str, unsigned int temp)
 {
 	unsigned int		i;
 	char				*hex;
+
 	i = 0;
 	hex = "0123456789abcdef";
 	while (i < 16 && str[i + temp])
@@ -39,16 +41,20 @@ void	ft_printhex(unsigned char *str, unsigned int temp)
 		i++;
 	}
 }
+
 void	ft_printhexa(unsigned long int nb)
 {
 	char	*hex;
+
 	hex = "0123456789abcdef";
 	ft_putchar(hex[nb / 16]);
 	ft_putchar(hex[nb % 16]);
 }
+
 void	ft_putstr(unsigned char *str, unsigned int temp)
 {
 	unsigned int		i;
+
 	i = 0;
 	while (i < 16 && str[i + temp])
 	{
@@ -65,10 +71,12 @@ void	ft_putstr(unsigned char *str, unsigned int temp)
 	}
 	write (1, "\n", 1);
 }
+
 void	*ft_print_memory(void *addr, unsigned int size)
 {
 	unsigned int	i;
 	int				j;
+
 	if (size == 0)
 		return (0);
 	i = 0;
