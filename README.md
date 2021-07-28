@@ -21,7 +21,7 @@
 > - [Rush.00](https://github.com/PandeoF1/piscine-42/tree/main/rush00) (125%)<br />
 > - [Rush.01](https://github.com/PandeoF1/piscine-42/tree/main/rush01) (0% - Cursed view check)<br />
 > - [Rush.02](https://github.com/PandeoF1/piscine-42/tree/main/rush02) (0% - Cursed display and memory leaks)<br />
-> - [BSQ](https://github.com/PandeoF1/piscine-42/tree/main/bsq) (80%)<br />
+> - [BSQ](https://github.com/PandeoF1/piscine-42/tree/main/bsq) (80 - (Cursed malloc of 100000000)%)<br />
 > - Exam.00 (100%)<br />
 > - Exam.01 (80%)<br />
 > - Exam.02 (84%)<br />
