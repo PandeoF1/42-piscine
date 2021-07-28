@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 15:16:03 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/27 18:07:19 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/28 09:14:30 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	ft_check_b(char **content, char **value)
 	(*value)[2] = content[0][n + 2];
 	content[0][n] = '\0';
 	i = ft_atoi(content[0]);
+	a = 0;
 	while (content[a])
 		a++;
 	if (a - 1 != i)
