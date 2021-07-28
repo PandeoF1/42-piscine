@@ -1,5 +1,5 @@
 ## Error :
- > - Project is empty UwU
+ > - Nothing for the moment
 
 ## Contributor :
  > - [tnard](https://profile.intra.42.fr/users/tnard)
@@ -13,8 +13,8 @@
 - [x] Verification des char dans le fichier (char invalide = error).
 - [x] Mise en place du main avec la boucle pour chaque fichier
 ### Resolve :
-- [ ] UwU
+- [x] UwU
 
 ### End :
-- [ ] Norminette
-- [ ] Memory Leaks 
+- [x] Norminette
+- [ ] Memory Leaks (LOL)
