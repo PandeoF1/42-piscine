@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:25 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/28 09:11:59 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/28 11:20:08 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,20 +82,19 @@ char	**ft_parse(char *filename, int a, int fd, int len)
 	content = ft_file_read(fd, 0, 0);
 	if (fd != STDIN_FILENO)
 		close(fd);
+	while (content[a])
+		a++;
+	if (content[a - 1] != '\n')
+		return (NULL);
 	dest = ft_split(content, '\n');
 	free(content);
 	a = 0;
-	len = ft_strlen(dest[a + 1]);
+	if (dest[a + 1])
+		len = ft_strlen(dest[a + 1]);
+	else
+		return (NULL);
 	while (dest[++a])
-	{
 		if (len != ft_strlen(dest[a]))
-		{
-			a = 0;
-			while (dest[a])
-				free(dest[a++]);
-			free(dest);
 			return (NULL);
-		}
-	}
 	return (dest);
 }

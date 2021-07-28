@@ -6,11 +6,12 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 09:05:11 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/25 09:08:36 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/28 12:50:36 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "bsq.h"
 
 int	ft_is_charset(char str, char *charset)
 {
@@ -82,8 +83,8 @@ char	**ft_split(char *str, char b)
 	i = 0;
 	size = ft_wordcount(str, charset);
 	dest = malloc((size + 1) * sizeof(char *));
-	if (!dest)
-		return (0);
+	if (!dest || ft_strlen(str) <= 1 || ft_check_c(str))
+		return (NULL);
 	while (i < size)
 	{
 		while (ft_is_charset(*str, charset))

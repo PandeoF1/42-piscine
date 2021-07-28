@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 10:36:23 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/28 05:54:05 by molatrec         ###   ########lyon.fr   */
+/*   Updated: 2021/07/28 12:50:51 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,16 @@ int		ft_check_b(char **content, char **value);
 int		ft_check_a(char **content, char *value);
 int		ft_map_length(char **map);
 int		ft_map_depth(char **map);
-void	ft_fill_map_obstacles(int **fill, char **map);
+void	ft_fill_map_obstacles(int **fill, char **map, char *value);
 void	ft_free(int **to_free, char **map);
 int		**ft_create_map_obstacle(int x, int y);
-int		**ft_obstacle_map(char **map);
+int		**ft_obstacle_map(char **map, char*value);
 t_bsq	ft_best_possible_fill(t_bsq best_possible, int i, int j, int size);
 int		ft_square_fits(int **obstacles_map, int i, int j, int size);
-t_bsq	ft_solve(char **map);
-void	ft_printing(char **map);
+t_bsq	ft_solve(char **map, char *value);
+void	ft_printing(char **map, char *value, int x);
 char	*ft_scanff(void);
 int		ft_atoi(char *str);
+int		ft_check_c(char *content);
 
 #endif

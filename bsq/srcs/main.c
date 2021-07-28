@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:26:57 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/28 09:15:40 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/28 13:21:46 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ int	error(void)
 	return (-1);
 }
 
-int	map_error(void)
+int	map_error(int n)
 {
-	ft_putstr("map error\n");
+	write(2, "map error\n", 10);
+	if (n != 1)
+		write(1, "\n", 1);
 	return (-1);
 }
 
@@ -41,18 +43,17 @@ int	main(int argc, char *argv[])
 	{
 		a = ft_split(ft_scanff(), '\n');
 		if (a != NULL && ft_check_b(a, &value) && ft_check_a(a, value))
-			ft_printing(&a[1]);
+			ft_printing(&a[1], value, 1);
 		else
-			map_error();
+			map_error(1);
 	}
 	while (++g_n < argc)
 	{
 		a = ft_parse(argv[g_n], 0, 0, 0);
 		if (a != NULL && ft_check_b(a, &value) && ft_check_a(a, value))
-			ft_printing(&a[1]);
+			ft_printing(&a[1], value, argc - g_n);
 		else
-			map_error();
+			map_error(argc - g_n);
 	}
-	free(value);
 	return (0);
 }

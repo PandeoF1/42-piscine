@@ -6,7 +6,7 @@
 #    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 12:51:03 by tnard             #+#    #+#              #
-#    Updated: 2021/07/28 06:09:08 by molatrec         ###   ########lyon.fr    #
+#    Updated: 2021/07/28 12:27:59 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJS	= ${addprefix ${SOURCE},${SRCS:.c=.o}}
 HEAD	= includes
 CC		= gcc
 CFLAGS	= -Wall -Werror -Wextra
-NAME	= bsq
+NAME    = bsq
 NORMINETTE = norminette
 NORMOBJS	= ${addprefix ${SOURCE},${SRCS}}
 

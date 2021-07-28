@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 02:20:27 by molatrec          #+#    #+#             */
-/*   Updated: 2021/07/28 06:08:07 by molatrec         ###   ########lyon.fr   */
+/*   Updated: 2021/07/28 12:24:35 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ t_bsq	ft_solve_shortener(char **m, int **obstacles_map, int i, int j)
 				if (!(j + s <= ft_map_depth(m) && i + s <= ft_map_length(m)))
 					break ;
 			}
-			s--;
+			if (s != 1)
+				s--;
 			if (s > best.size)
 				best = ft_best_possible_fill(best, i, j, s);
 		}
@@ -76,34 +77,33 @@ t_bsq	ft_solve_shortener(char **m, int **obstacles_map, int i, int j)
 	return (best);
 }
 
-t_bsq	ft_solve(char **map)
+t_bsq	ft_solve(char **map, char *value)
 {
 	int		**obstacles_map;
 	t_bsq	best;
 
 	best.size = 0;
-	obstacles_map = ft_obstacle_map(map);
+	obstacles_map = ft_obstacle_map(map, value);
 	if (!obstacles_map)
 		return (best);
 	best = ft_solve_shortener(map, obstacles_map, -1, 0);
-	ft_free(obstacles_map, map);
 	return (best);
 }
 
-void	ft_printing(char **map)
+void	ft_printing(char **map, char *value, int x)
 {
 	t_bsq	answer;
 	int		i;
 	int		j;
 
 	i = -1;
-	answer = ft_solve(map);
+	answer = ft_solve(map, value);
 	while (++i < answer.size)
 	{
 		j = -1;
 		while (++j < answer.size)
 		{
-			map[answer.x + i][answer.y + j] = 'x';
+			map[answer.x + i][answer.y + j] = value[2];
 		}
 	}
 	i = -1;
@@ -111,9 +111,9 @@ void	ft_printing(char **map)
 	{
 		j = -1;
 		while (map[i][++j])
-		{
 			ft_putchar(map[i][j]);
-		}
 		ft_putchar('\n');
+		if (x != 1)
+			ft_putchar('\n');
 	}
 }
