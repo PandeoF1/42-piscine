@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 15:39:30 by tnard             #+#    #+#             */
-/*   Updated: 2021/07/28 12:42:11 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/07/28 16:03:43 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_scanff(void)
 {
 	int		count;
 	char	mini_buff;
-	char	buff[5000];
+	char	buff[5000]; //ICI TU FAIT UN MALLOC DE 100000 ET TA 100 TROU DU CUL
 	char	*str;
 
 	count = 0;
