@@ -16,7 +16,7 @@
 > - [C.09](https://github.com/PandeoF1/piscine-42/tree/main/c09) (100%)<br />
 > - [C.10](https://github.com/PandeoF1/piscine-42/tree/main/c10) (x%)<br />
 > - [C.11](https://github.com/PandeoF1/piscine-42/tree/main/c11) (100%)<br />
-> - [C.12](https://github.com/PandeoF1/piscine-42/tree/main/c12) (19%)<br />
+> - [C.12](https://github.com/PandeoF1/piscine-42/tree/main/c12) (58%)<br />
 > - [C.13](https://github.com/PandeoF1/piscine-42/tree/main/c13) (x%)<br />
 > - [Rush.00](https://github.com/PandeoF1/piscine-42/tree/main/rush00) (125%)<br />
 > - [Rush.01](https://github.com/PandeoF1/piscine-42/tree/main/rush01) (0% - Cursed view check)<br />
