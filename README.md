@@ -1,5 +1,5 @@
 # [Piscine - 42 Lyon](https://www.42lyon.fr/)
-> June (05 -> 30) - 2021 | User : [tnard](https://profile.intra.42.fr/users/tnard/) | lvl : 10.37% | Log Time : 235 h
+> June (05 -> 30) - 2021 | User : [tnard](https://profile.intra.42.fr/users/tnard/) | lvl : 11.31% | Log Time : 250 h
 
 ## Note :<br />
 > - [Shell.00](https://github.com/PandeoF1/piscine-42/tree/main/shell00) (100%)<br />
@@ -25,7 +25,7 @@
 > - Exam.00 (100%)<br />
 > - Exam.01 (80%)<br />
 > - Exam.02 (84%)<br />
-> - Exam.Final (x%)<br />
+> - Exam.Final (84%)<br />
 
 ## Header :
 ```` 
