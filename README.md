@@ -1,4 +1,4 @@
-# [Piscine - 42 Lyon](https://www.42lyon.fr/)
+# [42Pool - Lyon](https://www.42lyon.fr/)
 > June (05 -> 30) - 2021 | User : [tnard](https://profile.intra.42.fr/users/tnard/) | lvl : 11.31% | Log Time : 250 h
 
 ## Note :<br />
