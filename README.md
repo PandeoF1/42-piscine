@@ -45,7 +45,7 @@
 ## Tools :
  > - [main.c](https://www.notion.so/alexheritier/Main-C-944afbadae554ae5a7875256dd7db277) <br />
  > - [norminette](https://github.com/42School/norminette) <br />
- > - [Makefile](https://nicomedes.assistedcoding.eu/#/app/makefilegen) <br />
+ > - [Makefile](https://github.com/PandeoF1/makefile) <br />
 
 ## (づ｡◕‿‿◕｡)づ :
 ```
