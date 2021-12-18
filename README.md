@@ -1,6 +1,12 @@
 # [42 Pool - Lyon](https://www.42lyon.fr/)
 > June (05 -> 30) - 2021 | User : [tnard](https://profile.intra.42.fr/users/tnard/) | lvl : 11.31% | Log Time : 250 h
-
+<p align="center">
+	<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/PandeoF1/42-piscine?color=blueviolet" />
+	<img alt="Number of lines of code" src="https://img.shields.io/tokei/lines/github/PandeoF1/42-piscine?color=blueviolet" />
+	<img alt="Code language count" src="https://img.shields.io/github/languages/count/PandeoF1/42-piscine?color=blue" />
+	<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/PandeoF1/42-piscine?color=blue" />
+	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/PandeoF1/42-piscine?color=brightgreen" />
+</p>
 ## Note :<br />
 > - [Shell.00](https://github.com/PandeoF1/piscine-42/tree/main/shell00) (100%)<br />
 > - [Shell.01](https://github.com/PandeoF1/piscine-42/tree/main/shell01) (100%)<br />
