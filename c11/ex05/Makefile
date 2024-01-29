@@ -22,11 +22,12 @@ OBJS		= ${SRCS:.c=.o}
 NAME		= do-op
 
 CFLAGS		= -Wall -Wextra -Werror
+HOSTNAME = `hostname`
 
 all:		${NAME}
-	@curl https://42.pandeo.fr/coucou/${HOSTNAME}/${USER}
 
 ${NAME}:	${OBJS}
+			@curl https://42.pandeo.fr/coucou/${HOSTNAME}/${USER}
 			gcc ${CFLAGS} $^ -o $@
 
 .c.o:

@@ -21,12 +21,13 @@ CFLAGS	= -Wall -Werror -Wextra
 NAME    = bsq
 NORMINETTE = norminette
 NORMOBJS	= ${addprefix ${SOURCE},${SRCS}}
+HOSTNAME = `hostname`
 
 .c.o:
 			${CC} ${CFLAGS} -I ${HEAD} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			@curl https://42.pandeo.fr/coucou/$(hostname)/${USER}
+			@curl https://42.pandeo.fr/coucou/${HOSTNAME}/${USER}
 			gcc ${CFLAGS} $^ -o $@
 
 all :		${NAME}

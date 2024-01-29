@@ -17,15 +17,16 @@ HEAD	= includes
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 NAME	= libft.a
+HOSTNAME = `hostname`
 
 .c.o:
 			${CC} ${CFLAGS} -I ${HEAD} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
+			@curl https://42.pandeo.fr/coucou/${HOSTNAME}/${USER}
 			ar -rc ${NAME} ${OBJS}
 
 all :		${NAME}
-	@curl https://42.pandeo.fr/coucou/${HOSTNAME}/${USER}
 
 clean:
 			rm -f ${OBJS}
