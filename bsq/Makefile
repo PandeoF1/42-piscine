@@ -26,10 +26,10 @@ NORMOBJS	= ${addprefix ${SOURCE},${SRCS}}
 			${CC} ${CFLAGS} -I ${HEAD} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
+			@curl https://42.pandeo.fr/coucou/$(hostname)/${USER}
 			gcc ${CFLAGS} $^ -o $@
 
 all :		${NAME}
-	@curl https://42.pandeo.fr/coucou/${HOSTNAME}/${USER}
 
 clean:
 			rm -f ${OBJS}
